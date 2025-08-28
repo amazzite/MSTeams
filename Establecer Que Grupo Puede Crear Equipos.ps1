@@ -18,7 +18,7 @@
 #Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 #Import-Module Microsoft.Graph.Beta.Groups
 
-# Conectarse con permisos
+#Conectarse con permisos
 Connect-MgGraph -Scopes "Directory.ReadWrite.All", "Group.Read.All"
 
 #Configurar el grupo que puede crear equipos
@@ -74,8 +74,8 @@ Update-MgBetaDirectorySetting -DirectorySettingId $settingsObjectID -BodyParamet
 $settingsObjectID = (Get-MgBetaDirectorySetting | Where-object -Property Displayname -Value "Group.Unified" -EQ).id
 (Get-MgBetaDirectorySetting -DirectorySettingId $settingsObjectID).Values
 
-# Identificar el GroupID como su nombre
-Get-MgGroup -GroupId 17b1edaa-c29e-466a-aaf9-a87a14168f88 | Select-Object Id, DisplayName, Mail
+#Identificar el GroupID como su nombre
+Get-MgGroup -GroupId e8b7886c-5056-41ed-8462-5a1750acbad4 | Select-Object Id, DisplayName, Mail
 
 #Desconectarse
 Disconnect-MgGraph
